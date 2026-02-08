@@ -9,7 +9,7 @@ Object.defineProperty(
   'toJadenCase',
   { value :
    function toJadenCase() {
-     return this.split(" ").map((w) => w[0].toUpperCase()+w.slice(1)).join(" ");
+     return this.split(' ').map((item) => item[0].toUpperCase()+item.slice(1)).join(' ');
    }
   }
 );
