@@ -4,8 +4,7 @@ export const decodeBits = (bits: string) => {
   const cleanBits = bits.slice(f1,l1+1);
   
   const rate = Math.min(
-    ...cleanBits.split('0').map(item => item.length || Infinity),
-    ...cleanBits.split('1').map((item => item.length || Infinity))
+    ...[...cleanBits.split('0'), ...cleanBits.split('1')].map(item => item.length || Infinity),
   );
   
   return cleanBits
@@ -23,4 +22,3 @@ export const decodeMorse = (morseCode: string) => {
          .map(char => MORSE_CODE[char]).join('')
       ).join(' ')
 };
-​
